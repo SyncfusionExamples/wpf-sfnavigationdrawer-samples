@@ -10,12 +10,19 @@
     <Window.DataContext>
         <local:NavigationViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="ItemStyle" TargetType="syncfusion:NavigationItem">
+            <Setter Property="Icon" Value="{Binding Icon}" />
+            <Setter Property="DisplayMemberPath" Value="Item" />
+            <Setter Property="ItemsSource" Value="{Binding SubItems}" />
+        </Style>
+    </Window.Resources>
     <syncfusion:SfNavigationDrawer
-            x:Name="navigationDrawer"
-            DisplayMemberPath="Item"
-            DisplayMode="Compact"
-            IconMemberPath="Icon"
-            ItemsSource="{Binding Items}">
+        x:Name="navigationDrawer"
+        DisplayMemberPath="Item"
+        DisplayMode="Expanded"
+        ItemContainerStyle="{StaticResource ItemStyle}"
+        ItemsSource="{Binding Items}">
         <syncfusion:SfNavigationDrawer.ContentView>
             <Label
                 Width="150"
