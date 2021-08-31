@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="NavigationSample.Views.BooksView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NavigationSample.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBox HorizontalAlignment="Center" 
+                 HorizontalContentAlignment="Center" 
+                 VerticalContentAlignment="Center"
+                 Text="BookView" Height="50" 
+                 Width="100"
+                 VerticalAlignment="Center"/>
+            <Button Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center"  
+                Height="50" 
+                Width="100"
+                VerticalAlignment="Center" 
+                Content="Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

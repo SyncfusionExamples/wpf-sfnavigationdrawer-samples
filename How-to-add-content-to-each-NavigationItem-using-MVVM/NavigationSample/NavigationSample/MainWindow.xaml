@@ -1,0 +1,69 @@
+﻿<Window x:Class="NavigationSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NavigationSample" xmlns:sf="http://schemas.syncfusion.com/wpf" xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <sf:SfNavigationDrawer
+        x:Name="navigationDrawer"
+        Grid.Column="0"
+        DisplayMode="Compact">
+            <sf:SfNavigationDrawer.ContentView>
+                <Grid>
+                    <ContentControl 
+                    x:Name="ActiveItem"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Content="ContentView"/>
+                </Grid>
+            </sf:SfNavigationDrawer.ContentView>
+
+            <sf:NavigationItem Header="Home" 
+                           Command="{Binding ClickCommand}"
+                           CommandParameter="Home"
+                           IsEnabled="True">
+                <sf:NavigationItem.Icon>
+                    <md:PackIcon
+                    Width="30"
+                    Height="30"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="Gray"
+                    Kind="Home" />
+                </sf:NavigationItem.Icon>
+            </sf:NavigationItem>
+
+            <sf:NavigationItem Header="Books" 
+                           Command="{Binding ClickCommand}"
+                           CommandParameter="Books"
+                           IsEnabled="True">
+                <sf:NavigationItem.Icon>
+                    <md:PackIcon
+                    Width="30"
+                    Height="30"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="Gray"
+                    Kind="Bookshelf" />
+                </sf:NavigationItem.Icon>
+            </sf:NavigationItem>
+
+            <sf:SfNavigationDrawer.FooterItems>
+                <sf:NavigationItem Header="Log Out" SelectionBackground="Transparent">
+                    <sf:NavigationItem.Icon>
+                        <md:PackIcon
+                        Width="30"
+                        Height="30"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="Gray"
+                        Kind="Power" />
+                    </sf:NavigationItem.Icon>
+                </sf:NavigationItem>
+            </sf:SfNavigationDrawer.FooterItems>
+        </sf:SfNavigationDrawer>
+    </Grid>
+</Window>
