@@ -1,0 +1,121 @@
+﻿<Window x:Class="KeyboardSupportSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="Keyboard Support" Height="600" Width="800">
+
+    <Window.Resources>
+        <Geometry x:Key="NewFile">M0.947365 0.011143L0.410324 0.0172315L0.331879 0.0530155C0.199116 0.113567 0.105863 0.202286 0.0349499 0.335497L0.00605831 0.389776L0.00302915 19.991L0 39.5922L0.0393187 39.6712C0.0923228 39.7778 0.232714 39.911 0.346711 39.963L0.427919 40H17.0024H33.5769L33.6639 39.9586C33.7792 39.9037 33.9014 39.7881 33.9562 39.6821L33.9965 39.6042L33.9995 23.9591C34.0012 15.3543 33.9982 8.12734 33.9928 7.89914L33.983 7.4842L33.9491 7.42102C33.9131 7.35388 33.7739 7.2192 31.2029 4.76355C29.5645 3.19875 26.4756 0.276749 26.3296 0.153555C26.242 0.0796439 26.1857 0.0415853 26.1384 0.0243883L26.0715 0L13.778 0.00252728C7.0165 0.00392878 1.24274 0.00780012 0.947365 0.011143ZM25.364 4.43711L25.3681 7.75991L25.396 7.83414C25.4635 8.01364 25.5839 8.13197 25.7609 8.1928L25.8383 8.21941L29.3351 8.22268L32.8319 8.22594V23.5558V38.8857H16.9983H1.16459V20V1.1143H13.2623H25.3599L25.364 4.43711ZM29.7303 4.94471L32.0052 7.11086L30.1165 7.11084C29.0778 7.11084 27.8499 7.10742 27.388 7.10323L26.5482 7.09562L26.5398 5.21009C26.5352 4.17304 26.5352 3.01094 26.5398 2.62765L26.5482 1.93076L27.0018 2.35467C27.2513 2.58781 28.4792 3.75333 29.7303 4.94471Z</Geometry>
+        <Geometry x:Key="Cursor">M1.25533 0.0261793C1.2306 0.0536745 1.20775 0.215021 1.2045 0.384696C1.20128 0.554372 1.14201 2.2116 1.07274 4.06743C1.00352 5.92326 0.896198 8.81257 0.834307 10.4881C0.772416 12.1637 0.554683 18.0508 0.350494 23.5705C0.146262 29.0903 -0.0111657 33.6064 0.000621031 33.6064C0.0226515 33.6063 0.433001 33.2917 1.47713 32.4742C1.80592 32.2167 2.23144 31.8846 2.42273 31.7362C2.81773 31.4296 6.72382 28.3814 8.18447 27.2399C8.75585 26.7934 9.16281 26.5015 9.17927 26.5265C9.20859 26.571 9.76998 27.8217 11.5002 31.6976C14.0954 37.5109 15.0868 39.7292 15.1514 39.8672C15.2016 39.9744 15.2413 40.0106 15.2936 39.9974C15.3777 39.9762 21.9173 37.614 21.9372 37.5976C21.9502 37.5869 20.7743 34.9231 20.5755 34.5127C20.5549 34.4702 20.3036 33.9063 20.017 33.2594C19.4164 31.9036 16.0686 24.4022 15.9698 24.1907L15.9038 24.0493L16.2136 24.026C16.4734 24.0065 23.8173 23.6729 26.9172 23.5398C27.4241 23.518 27.893 23.4965 27.9593 23.492C28.07 23.4844 28.0025 23.4149 27.145 22.653C26.6307 22.1961 25.8442 21.502 25.3972 21.1105C24.9501 20.719 24.1786 20.0423 23.6827 19.6066C23.1869 19.171 22.3568 18.4422 21.8383 17.987C21.3197 17.5319 20.471 16.7859 19.9524 16.3294C19.4337 15.8729 18.2379 14.8237 17.295 13.9977C16.352 13.1718 15.1367 12.105 14.5943 11.6271C13.0139 10.2346 11.6979 9.07707 10.8008 8.2907C10.3415 7.88807 9.56052 7.20262 9.06522 6.76748C8.56992 6.3323 7.75021 5.61233 7.24363 5.16747C6.73706 4.72261 5.91756 4.00207 5.42252 3.56627C2.56357 1.04936 1.44512 0.0744984 1.40067 0.0607701C1.3732 0.0522863 1.33938 0.0297653 1.32553 0.0107539C1.31165 -0.0082961 1.28006 -0.00135447 1.25533 0.0261793ZM4.73674 4.61036C5.27893 5.08684 6.12758 5.83167 6.62262 6.26562C7.11766 6.69957 7.90845 7.39381 8.37992 7.80844C8.85139 8.22302 9.63252 8.90952 10.1158 9.3339C10.599 9.75832 11.4332 10.4943 11.9696 10.9695C12.5059 11.4446 12.9658 11.845 12.9915 11.8593C13.0172 11.8736 13.4078 12.2133 13.8594 12.6142C14.311 13.015 15.0855 13.698 15.5805 14.1318C16.0756 14.5657 16.9049 15.2945 17.4236 15.7514C18.8495 17.0078 20.0318 18.0467 21.9454 19.7244C24.6147 22.0647 25.0099 22.417 24.9877 22.4352C24.9764 22.4445 23.3469 22.5254 21.3668 22.615C15.077 22.8995 14.0614 22.9481 14.0433 22.9655C14.0199 22.9881 14.0526 23.0618 17.9669 31.8133C19.9322 36.2073 20.2467 36.9215 20.2249 36.9412C20.1965 36.9667 16.0728 38.4625 15.9955 38.4753C15.938 38.4848 15.8456 38.2826 13.0522 32.0254C12.3278 30.4028 11.6139 28.8064 11.4656 28.4776C11.3173 28.1489 10.8641 27.1337 10.4584 26.2217C10.0527 25.3097 9.71199 24.5504 9.70127 24.5343C9.69056 24.5183 9.51311 24.6398 9.30695 24.8043C9.10075 24.9688 8.3749 25.5372 7.69397 26.0674C7.013 26.5977 5.98224 27.402 5.4034 27.8548C2.50987 30.1185 1.61292 30.8184 1.49869 30.9018L1.37384 30.9929L1.39574 30.6318C1.40783 30.4332 1.44597 29.4725 1.48056 28.4969C1.54983 26.5441 1.66971 23.256 1.80048 19.7239C2.13826 10.6006 2.26762 7.069 2.33658 5.08934C2.37203 4.07129 2.41257 3.0928 2.42667 2.91491L2.45235 2.59148L3.10165 3.1678C3.45876 3.48475 4.19455 4.13391 4.73674 4.61036Z</Geometry>
+        <Geometry x:Key="Settings">M11.3913 16.0279L11.4027 16.028L11.4142 16.0279L13.1031 16.007C14.3166 15.992 15.3726 16.8343 15.6277 18.0208L15.9869 19.692C16.5561 22.339 19.2968 23.9064 21.8669 23.0545L23.1474 22.6301C24.2165 22.2757 25.3915 22.6647 26.0379 23.587L27.4214 25.5609L28.5686 27.1977C29.2924 28.2304 29.1527 29.6371 28.2398 30.5072L26.6533 32.0193C24.732 33.8506 24.7796 36.9309 26.7566 38.7019L28.1148 39.9187C29.0386 40.7462 29.233 42.1183 28.5756 43.1699L27.5065 44.8797L26.2746 46.8502C25.6706 47.8162 24.4992 48.2644 23.4047 47.9483L21.5243 47.4051C18.9755 46.669 16.3401 48.2605 15.8051 50.8589L15.6092 51.8105C15.3633 53.0048 14.3064 53.8579 13.0871 53.8462L10.5487 53.8218L10.5383 53.8217L10.528 53.8219L8.63212 53.8428C7.47339 53.8556 6.45171 53.0856 6.14491 51.9681L5.67647 50.262C5.01952 47.8693 2.56669 46.4441 0.162644 47.0582L-1.26953 47.4241C-2.29721 47.6866 -3.3801 47.2855 -3.98888 46.417L-5.45824 44.3205L-6.32309 42.8601C-6.89973 41.8865 -6.76569 40.6492 -5.99391 39.8216L-4.47474 38.1926C-2.86025 36.4613 -2.84297 33.7813 -4.43502 32.0294L-6.33713 29.9362C-7.10604 29.0901 -7.2178 27.8356 -6.61058 26.8669L-5.8256 25.6146L-5.82559 25.6146L-4.9069 24.149C-4.34608 23.2544 -3.29188 22.7979 -2.2557 23.001L0.453296 23.5321C2.86716 24.0054 5.22009 22.4745 5.76544 20.0759L6.24089 17.9847C6.50706 16.814 7.55379 15.9875 8.75431 16.0001L11.3913 16.0279ZM-7.18352 43.3697L-6.29914 44.863L-4.80777 46.9909C-3.96026 48.2001 -2.45271 48.7584 -1.02201 48.3929L0.410157 48.0271C2.28584 47.5479 4.19959 48.6599 4.71215 50.5267L5.18059 52.2329C5.60771 53.7885 7.03005 54.8606 8.64318 54.8428L10.5391 54.8218L13.0775 54.8462C14.7749 54.8625 16.2464 53.6748 16.5887 52.0122L16.7846 51.0606C17.202 49.0333 19.2582 47.7915 21.2468 48.3658L23.1273 48.909C24.6509 49.3491 26.2817 48.7251 27.1225 47.3803L28.3545 45.4098L29.4235 43.7C30.3387 42.236 30.0681 40.3259 28.7821 39.1738L27.4238 37.9571C25.8814 36.5753 25.8442 34.172 27.3432 32.7432L28.9298 31.231C30.2006 30.0197 30.3951 28.0614 29.3875 26.6238L28.2403 24.9869L26.8568 23.013C25.9569 21.729 24.3211 21.1875 22.8328 21.6808L21.5523 22.1053C19.5471 22.7699 17.4086 21.5471 16.9646 19.4818L16.6053 17.8106C16.2502 16.1588 14.7801 14.9862 13.0907 15.0071L11.4018 15.028L8.76484 15.0002C7.09354 14.9826 5.63633 16.1332 5.26578 17.763L4.79032 19.8542C4.36483 21.7256 2.52903 22.92 0.645682 22.5508L-2.06332 22.0197C-3.50584 21.7369 -4.97345 22.3724 -5.75419 23.6179L-6.67289 25.0835L-7.45788 26.3358C-8.30322 27.6844 -8.14763 29.4308 -7.0772 30.6088L-5.17509 32.7019C-3.93294 34.0688 -3.94642 36.1598 -5.20608 37.5105L-6.72525 39.1396C-7.7997 40.2917 -7.9863 42.0142 -7.18352 43.3697ZM18.1507 34.8467C18.1507 38.7127 15.0167 41.8467 11.1507 41.8467C7.28471 41.8467 4.1507 38.7127 4.1507 34.8467C4.1507 30.9808 7.28471 27.8467 11.1507 27.8467C15.0167 27.8467 18.1507 30.9808 18.1507 34.8467ZM19.1507 34.8467C19.1507 39.265 15.569 42.8467 11.1507 42.8467C6.73242 42.8467 3.1507 39.265 3.1507 34.8467C3.1507 30.4285 6.73242 26.8467 11.1507 26.8467C15.569 26.8467 19.1507 30.4285 19.1507 34.8467Z</Geometry>
+
+        <Style x:Key="NavigationItemPathStyle" TargetType="Path">
+            <Setter Property="Width" Value="16" />
+            <Setter Property="Height" Value="16" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Stretch" Value="Fill" />
+            <Setter Property="Fill" Value="Black" />
+        </Style>
+
+    </Window.Resources>
+
+    <syncfusion:SfNavigationDrawer x:Name="navigationDrawer" DisplayMode="Expanded">
+        
+        <syncfusion:NavigationItem Header="Pages" ItemType="Header"/>
+
+        <syncfusion:NavigationItem
+            Header="SamplePage 1"
+            IsExpanded="True"
+            IsSelected="True"
+            KeyDown="SamplePage1_KeyDown">
+
+            <syncfusion:NavigationItem.Icon>
+                <Path Data="{StaticResource NewFile}" 
+                      Style="{StaticResource NavigationItemPathStyle}" />
+            </syncfusion:NavigationItem.Icon>
+        </syncfusion:NavigationItem>
+
+        <syncfusion:NavigationItem 
+            Header="SamplePage 2"
+            KeyDown="SamplePage2_KeyDown">
+            <syncfusion:NavigationItem.Icon>
+                <Path Data="{StaticResource NewFile}" 
+                      Style="{StaticResource NavigationItemPathStyle}" />
+            </syncfusion:NavigationItem.Icon>
+        </syncfusion:NavigationItem>
+
+        <syncfusion:NavigationItem 
+            Header="SamplePage 3"
+            KeyDown="SamplePage3_KeyDown">
+            <syncfusion:NavigationItem.Icon>
+                <Path Data="{StaticResource NewFile}" 
+                      Style="{StaticResource NavigationItemPathStyle}" />
+            </syncfusion:NavigationItem.Icon>
+        </syncfusion:NavigationItem>
+
+        <syncfusion:NavigationItem 
+            Header="SamplePage 4"
+            KeyDown="SamplePage4_KeyDown">
+            <syncfusion:NavigationItem.Icon>
+                <Path Data="{StaticResource NewFile}" 
+                      Style="{StaticResource NavigationItemPathStyle}" />
+            </syncfusion:NavigationItem.Icon>
+        </syncfusion:NavigationItem>
+
+        <syncfusion:NavigationItem ItemType="Separator" />
+
+        <syncfusion:NavigationItem Header="Actions" ItemType="Header" />
+
+        <syncfusion:NavigationItem 
+            Header="Clicked"
+            KeyDown="Clicked_KeyDown">
+            <syncfusion:NavigationItem.Icon>
+                <Path Data="{StaticResource Cursor}" 
+                      Style="{StaticResource NavigationItemPathStyle}" />
+            </syncfusion:NavigationItem.Icon>
+        </syncfusion:NavigationItem>
+
+        <syncfusion:SfNavigationDrawer.ToggleButtonContentTemplate>
+            <DataTemplate>
+                <Label 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Page Explorer"
+                    FontWeight="Bold"
+                    FontSize="15"/>
+            </DataTemplate>
+        </syncfusion:SfNavigationDrawer.ToggleButtonContentTemplate>
+
+        <syncfusion:SfNavigationDrawer.FooterItems>
+            <syncfusion:NavigationItem 
+                Header="Settings"
+                KeyDown="Settings_KeyDown">
+                <syncfusion:NavigationItem.Icon>
+                    <Path Data="{StaticResource Settings}" 
+                      Style="{StaticResource NavigationItemPathStyle}" />
+                </syncfusion:NavigationItem.Icon>
+            </syncfusion:NavigationItem>
+        </syncfusion:SfNavigationDrawer.FooterItems>
+
+        <syncfusion:SfNavigationDrawer.ContentView>
+            <Grid>
+                <Label 
+                    x:Name="titleLabel"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"/>
+                <Label
+                    x:Name="mainLabel"
+                    FontSize="16"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+            </Grid>
+           
+        </syncfusion:SfNavigationDrawer.ContentView>
+    </syncfusion:SfNavigationDrawer>
+</Window>
