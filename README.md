@@ -29,15 +29,11 @@ Help document: https://help.syncfusion.com/wpf/navigation-drawer/overview
 
 ## Build & Run
 
-1. Open the solution in Visual Studio (2019 or later recommended).
+1. Open the solution in Visual Studio 2026.
 2. Restore NuGet packages and ensure Syncfusion WPF packages are available.
 3. Set the desired sample project as Startup and run.
 
 For CI or command-line builds, use `msbuild` or `dotnet build` depending on the sample project SDK style.
-
-## Contributing
-
-Contributions are welcome. If you add a new sample, please include a short README in the sample folder describing what it demonstrates and any special steps required to run it.
 
 ## Screenshot
 
@@ -46,8 +42,4 @@ Contributions are welcome. If you add a new sample, please include a short READM
 ## Attribution
 
 The screenshot used in this repository is provided under the original Syncfusion sample imagery and is reproduced here for demonstration purposes only. Refer to Syncfusion documentation and licensing for redistribution rules.
-
----
-
-This README now provides a useful introduction, practical guidance for running the samples, and enough content to satisfy repository requirements for minimum length. If you'd like, I can add per-sample quick start commands or a table of contents linking to each sample folder.
 
